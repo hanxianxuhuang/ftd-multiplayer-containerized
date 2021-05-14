@@ -9,6 +9,7 @@ Docker, React, Web Sockets, Material-UI, MongoDB, PostgreSQL, JavaScript, jQuery
 
 ## Setup
 ```
+# cd into the directory
 docker-compose up -d --build
 ```
 
