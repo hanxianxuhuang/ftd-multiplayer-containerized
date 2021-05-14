@@ -16,5 +16,5 @@ docker-compose up -d --build
 
 ## Usage
 - Make sure all containers are started
-- Visit localhost:3000 in browser
+- Visit IP_ADDRESS:3000 in browser (use ```ip a``` (Ubuntu) or ```ipconfig``` (Windows)  to determine IP_ADDRESS)
 
