@@ -1,0 +1,41 @@
+version: '3.4'
+
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_DB=webdb
+      - POSTGRES_USER=webdbuser
+      - POSTGRES_PASSWORD=password
+    volumes: 
+      - ./server/db/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+
+  mongo:
+    image: mongo
+    command: --serviceExecutor adaptive
+
+  client:
+    image: client
+    build:
+      context: client
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - "3000:3000"
+
+  server:
+    image: server
+    build:
+      context: server
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - "8000:8000"
+      - "8001:8001"
+      - "8002:8002"
+    links:
+      - postgres
+      - mongo
