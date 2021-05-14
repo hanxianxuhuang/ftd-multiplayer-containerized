@@ -8,9 +8,9 @@ A multiplayer shooting game
 Docker, React, Web Sockets, Material-UI, MongoDB, PostgreSQL, JavaScript, jQuery, Restful API, Node.js, Express.js, Ajax and Middleware
 
 ## Setup
-'''
+```
 docker-compose up -d --build
-'''
+```
 
 ## Usage
 - Make sure all containers are started
